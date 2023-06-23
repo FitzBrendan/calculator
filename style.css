@@ -1,0 +1,243 @@
+html {
+  font-family: roboto;
+}
+
+/* ==== Number Sign Change to Courier for better readability */
+#num_sign {
+  font-family: courier;
+}
+
+:root {
+  --red: #f78787;
+  --red__border--outset: 4px outset #f78787b3;
+  --red__border--inset: 4px inset #f78787b3;
+  --blue: #cee5ec;
+  --blue__border--outset: 4px outset #cee5ecb3;
+  --blue__border--inset: 4px inset #cee5ecb3;
+  --gray: #dadada;
+  --gray__border--outset: 4px outset #dadadab3;
+  --gray__border--inset: 4px inset #dadadab3;
+  --light_gray: #e9e9e9;
+  --light_gray__border--outset: 4px outset #e9e9e9b3;
+  --light_gray__border--inset: 4px inset #e9e9e9b3;
+  --green: #8ee18e;
+  --green__border--outset: 4px outset #8ee18eb3;
+  --green__border--inset: 4px inset #8ee18eb3;
+}
+
+#calc__grid--container {
+  margin: auto;
+  margin-top: 4em;
+  padding: 10px;
+  background-color: #f0f0f0;
+  max-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 0.4em;
+  border: 0.15em solid #3538cf;
+  border-radius: 2%;
+}
+
+.square,
+#zero,
+#equals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  user-select: none;
+}
+
+/* ==== Set Grid Items to Squares */
+.square {
+  aspect-ratio: 1;
+}
+
+/* ==== #pad and #result - grid output items, set height */
+#pad,
+#result {
+  min-height: 2.1em;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 1em;
+  font-size: 1.5rem;
+}
+
+/* ==== Styles for Output Displays */
+
+#pad,
+#result {
+  background-color: #fafafa;
+  border: 4px inset #fafafa66;
+}
+
+/* ==== Styles for Hover over Input Grid Items */
+
+.erase:hover,
+.number:hover,
+.math:hover,
+#decimal:hover {
+  scale: 1.04;
+}
+
+/* ==== Styles for Input Grid Items */
+
+.number {
+  background-color: var(--gray);
+  border: var(--gray__border--outset);
+}
+.number:active {
+  border: var(--gray__border--inset);
+}
+
+#decimal {
+  background-color: var(--light_gray);
+  border: var(--light_gray__border--outset);
+}
+#decimal:active {
+  border: var(--light_gray__border--inset);
+}
+
+.math {
+  font-size: 2.5rem;
+  font-weight: 500;
+  background-color: var(--blue);
+  border: var(--blue__border--outset);
+}
+
+.math:active {
+  border: var(--blue__border--inset);
+}
+
+.erase {
+  background-color: var(--red);
+  border: var(--red__border--outset);
+}
+.erase:active {
+  border: var(--red__border--inset);
+}
+
+#equals {
+  background-color: var(--green);
+  border: var(--green__border--outset);
+}
+#equals:active {
+  border: var(--green__border--inset);
+}
+
+/* ==== Calculator Display Top Two Rows Positioning */
+
+#clear {
+  grid-column: 1;
+  grid-row: 1;
+}
+#pad {
+  grid-column: 2 / -1;
+  grid-row: 1;
+}
+
+#all_clear {
+  grid-column: 1;
+  grid-row: 2;
+}
+#result {
+  grid-column: 2 / -1;
+  grid-row: 2;
+}
+
+/* ==== Calculator Inputs Grid Line Positioning */
+
+#pos_neg {
+  grid-column: 1;
+  grid-row: 3;
+}
+#percentage {
+  grid-column: 2;
+  grid-row: 3;
+}
+#multiply {
+  grid-column: 3;
+  grid-row: 3;
+}
+#divide {
+  grid-column: 4;
+  grid-row: 3;
+}
+
+#seven {
+  grid-column: 1;
+  grid-row: 4;
+}
+#eight {
+  grid-column: 2;
+  grid-row: 4;
+}
+#nine {
+  grid-column: 3;
+  grid-row: 4;
+}
+#minus {
+  grid-column: 4;
+  grid-row: 4;
+}
+
+#four {
+  grid-column: 1;
+  grid-row: 5;
+}
+#five {
+  grid-column: 2;
+  grid-row: 5;
+}
+#six {
+  grid-column: 3;
+  grid-row: 5;
+}
+#plus {
+  grid-column: 4;
+  grid-row: 5;
+}
+
+#one {
+  grid-column: 1;
+  grid-row: 6;
+}
+#two {
+  grid-column: 2;
+  grid-row: 6;
+}
+#three {
+  grid-column: 3;
+  grid-row: 6;
+}
+
+#zero {
+  grid-column: 1 / span 2;
+  grid-row: 7;
+}
+#decimal {
+  grid-column: 3;
+  grid-row: 7;
+}
+#equals {
+  grid-column: 4;
+  grid-row: 6 / span 2;
+}
+
+/* ==== Footer */
+
+#copyright__flex--container {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: center;
+  column-gap: 7em;
+  font-size: 0.7rem;
+}
+.fa-github:hover {
+  scale: 3;
+  rotate: 1 1 1 45deg;
+  translate: 10px;
+}
