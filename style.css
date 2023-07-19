@@ -2,15 +2,17 @@ html {
   font-family: roboto;
 }
 
-/* ==== Number Sign Change to Courier for better readability */
-#num_sign {
-  font-family: courier;
+#fitz {
+  font-family: sans-serif;
+  font-weight: 500;
+  background-color: rgba(232, 236, 46, 0.984);
+  color: rgb(10, 106, 56);
 }
 
 :root {
-  --red: #f78787;
-  --red__border--outset: 4px outset #f78787b3;
-  --red__border--inset: 4px inset #f78787b3;
+  --red: #f3baba;
+  --red__border--outset: 4px outset #f6bbbb;
+  --red__border--inset: 4px inset #f3baba;
   --blue: #cee5ec;
   --blue__border--outset: 4px outset #cee5ecb3;
   --blue__border--inset: 4px inset #cee5ecb3;
@@ -41,7 +43,8 @@ html {
 
 .square,
 #zero,
-#equals {
+#equals,
+#all_clear {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,32 +61,38 @@ html {
 /* ==== #pad and #result - grid output items, set height */
 #pad,
 #result {
-  min-height: 2.1em;
+  min-height: 2.3em;
   display: flex;
   justify-content: end;
   align-items: center;
-  padding-right: 1em;
-  font-size: 1.5rem;
-}
-
-/* ==== Styles for Output Displays */
-
-#pad,
-#result {
+  padding-right: 0.1em;
+  font-size: 1.7rem;
   background-color: #fafafa;
   border: 4px inset #fafafa66;
 }
+
 
 /* ==== Styles for Hover over Input Grid Items */
 
 .erase:hover,
 .number:hover,
 .math:hover,
-#decimal:hover {
+#decimal:hover,
+#equals:hover {
   scale: 1.04;
 }
 
 /* ==== Styles for Input Grid Items */
+
+.math,
+#equals {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+#percentage {
+  font-size: 2rem;
+  font-weight: 100;
+}
 
 .number {
   background-color: var(--gray);
@@ -101,9 +110,8 @@ html {
   border: var(--light_gray__border--inset);
 }
 
-.math {
-  font-size: 2.5rem;
-  font-weight: 500;
+.math,
+#equals {
   background-color: var(--blue);
   border: var(--blue__border--outset);
 }
@@ -135,8 +143,9 @@ html {
   grid-row: 1;
 }
 #pad {
-  grid-column: 2 / -1;
-  grid-row: 1;
+  /* grid-column: 2 / -1; */
+  grid-column: 2 / span 3;
+  grid-row: 1 / span 1;
 }
 
 #all_clear {
@@ -144,16 +153,17 @@ html {
   grid-row: 2;
 }
 #result {
-  grid-column: 2 / -1;
-  grid-row: 2;
+  grid-column: 2 / span 3;
+  grid-row: 2 / span 1;
 }
+
 
 /* ==== Calculator Inputs Grid Line Positioning */
 
-#pos_neg {
+/* #pos_neg {
   grid-column: 1;
   grid-row: 3;
-}
+} */
 #percentage {
   grid-column: 2;
   grid-row: 3;
