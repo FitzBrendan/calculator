@@ -27,6 +27,16 @@ html {
   --green__border--inset: 4px inset #8ee18eb3;
 }
 
+@media (max-width: 480px) {
+  #calc__grid--container {
+    margin-top: 2em;
+  }
+  #pad,
+  #result {
+    min-height: 2em;
+  }
+}
+
 #calc__grid--container {
   margin: auto;
   margin-top: 4em;
@@ -70,7 +80,6 @@ html {
   background-color: #fafafa;
   border: 4px inset #fafafa66;
 }
-
 
 /* ==== Styles for Hover over Input Grid Items */
 
@@ -143,7 +152,6 @@ html {
   grid-row: 1;
 }
 #pad {
-  /* grid-column: 2 / -1; */
   grid-column: 2 / span 3;
   grid-row: 1 / span 1;
 }
@@ -157,13 +165,8 @@ html {
   grid-row: 2 / span 1;
 }
 
-
 /* ==== Calculator Inputs Grid Line Positioning */
 
-/* #pos_neg {
-  grid-column: 1;
-  grid-row: 3;
-} */
 #percentage {
   grid-column: 2;
   grid-row: 3;
